@@ -132,7 +132,6 @@ C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\scopedcss\bundle\Yugioh_Cartas.styles.css
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\scopedcss\projectbundle\Yugioh_Cartas.bundle.scp.css
-C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\531xcyz386-{0}-b2y21w7nze-b2y21w7nze.gz
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\wkfz9sczxr-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\qgt8krxlr3-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\wf63o7qnfs-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -208,3 +207,5 @@ C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\Yugioh_Cartas.pdb
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\Yugioh_Cartas.genruntimeconfig.cache
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\ref\Yugioh_Cartas.dll
+C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\Yugioh_Cartas.sourcelink.json
+C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\531xcyz386-{0}-b2y21w7nze-b2y21w7nze.gz
