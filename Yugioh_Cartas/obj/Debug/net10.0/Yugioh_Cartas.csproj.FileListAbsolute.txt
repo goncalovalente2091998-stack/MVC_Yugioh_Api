@@ -208,4 +208,4 @@ C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\Yugioh_Cartas.genruntimeconfig.cache
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\ref\Yugioh_Cartas.dll
 C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\Yugioh_Cartas.sourcelink.json
-C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\531xcyz386-{0}-b2y21w7nze-b2y21w7nze.gz
+C:\Users\gonca\Desktop\projeto\curriculo\MVC_Yugioh_Api\Yugioh_Cartas\obj\Debug\net10.0\compressed\531xcyz386-{0}-zo6iz4njvu-zo6iz4njvu.gz
