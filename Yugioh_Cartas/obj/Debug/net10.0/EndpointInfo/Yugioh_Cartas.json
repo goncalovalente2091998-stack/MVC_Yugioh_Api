@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Yugioh_Cartas",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Cartas/All": {
+      "get": {
+        "tags": [
+          "Cartas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { },
+  "tags": [
+    {
+      "name": "Cartas"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas Yu-Gi-Oh!</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Coleção de Cartas Yu-Gi-Oh!</h1>
+
+        <input type="text" id="filtro" class="form-control mb-4 text-white" placeholder="🔍 Procurar carta...">
+
+        <div class="row" id="cartas-container"></div>
+
+        <div class="text-center">
+            <button id="carregar-mais" class="btn btn-lg btn-warning mt-4">Carregar mais</button>
+        </div>
+    </div>
+
+
+    <div id="zoom-overlay">
+        <div id="zoom-card">
+            <img src="" id="zoom-img" alt="">
+            <h3 id="zoom-title" class="text-center mt-3"></h3>
+        </div>
+    </div>
+
+    <script>
+        let todasCartas = [];
+        let cartasExibidas = [];
+        const LIMITE_POR_VEZ = 30;
+
+        async function carregarCartas() {
+            const res = await fetch('https://db.ygoprodeck.com/api/v7/cardinfo.php');
+            const data = await res.json();
+            todasCartas = data.data;
+
+            cartasExibidas = [];
+            mostrarMaisCartas();
+        }
+
+        function mostrarMaisCartas() {
+            const filtro = document.getElementById('filtro').value.toLowerCase();
+            const container = document.getElementById('cartas-container');
+
+            let restantes = todasCartas.filter(c => !cartasExibidas.includes(c));
+
+            let novas = [];
+            for (let i = 0; i < LIMITE_POR_VEZ && restantes.length > 0; i++) {
+                const idx = Math.floor(Math.random() * restantes.length);
+                novas.push(restantes[idx]);
+                cartasExibidas.push(restantes[idx]);
+                restantes.splice(idx, 1);
+            }
+
+            const filtradas = novas.filter(c => c.name.toLowerCase().includes(filtro));
+
+            container.innerHTML += filtradas.map(c => `
+                <div class="col-md-3 mb-4 d-flex justify-content-center">
+        <div class="ygocard text-center" onclick="ampliarCarta('${c.card_images[0].image_url}', '${c.name}')">
+                        <img src="${c.card_images[0].image_url}" alt="${c.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${c.name}</h5>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            if (cartasExibidas.length >= todasCartas.length) {
+                document.getElementById('carregar-mais').style.display = 'none';
+            }
+        }
+
+        function ampliarCarta(img, nome) {
+            document.getElementById("zoom-img").src = img;
+            document.getElementById("zoom-title").innerText = nome;
+            document.getElementById("zoom-overlay").style.display = "flex";
+        }
+
+       
+        document.getElementById("zoom-overlay").onclick = function (e) {
+            if (e.target.id === "zoom-overlay") {
+                document.getElementById("zoom-overlay").style.display = "none";
+            }
+        };
+
+        document.getElementById('carregar-mais').addEventListener('click', mostrarMaisCartas);
+        document.getElementById('filtro').addEventListener('input', () => {
+            const container = document.getElementById('cartas-container');
+            const filtro = document.getElementById('filtro').value.toLowerCase();
+
+            container.innerHTML = cartasExibidas
+                .filter(c => c.name.toLowerCase().includes(filtro))
+                .map(c => `
+                    <div class="col-md-3 mb-4">
+                        <div class="ygocard" onclick="ampliarCarta('${c.card_images[0].image_url}', '${c.name}')">
+                            <img src="${c.card_images[0].image_url}" alt="${c.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${c.name}</h5>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+        });
+
+        carregarCartas();
+    </script>
+
+</body>
+</html>

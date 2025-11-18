@@ -1,0 +1,92 @@
+body {
+    background: radial-gradient(circle, #120800, #000000);
+    color: #ffd27f;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+    font-family: "Georgia", serif;
+    text-shadow: 0 0 15px #ffb100, 0 0 30px #ff9800;
+}
+
+#filtro {
+    background: #2d1d00;
+    color: #ffd27f;
+    border: 2px solid #cfa860;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+    #filtro:focus {
+        border-color: #ffd56a;
+        box-shadow: 0 0 12px #ffd56a;
+    }
+
+.ygocard {
+   
+    width: 100%;
+    background: linear-gradient(145deg, #3a1f00, #1d1000);
+    border: 2px solid #c6a15b;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+}
+
+    .ygocard:hover {
+        transform: scale(1.03);
+    }
+
+    .ygocard img {
+      
+        display: block; 
+        width: 100%;
+        height: 320px;
+        object-fit: cover; 
+        border-radius: 10px 10px 0 0; 
+    }
+
+.card-title {
+    color: #ffda8a;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 5px; 
+}
+
+
+#zoom-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#zoom-card {
+    background: linear-gradient(160deg, #4d2600, #1a0e00);
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px solid gold;
+    box-shadow: 0 0 30px gold;
+    max-width: 450px;
+    animation: zoomIn 0.25s ease-out;
+}
+
+    #zoom-card img {
+        width: 100%;
+    }
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

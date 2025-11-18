@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Yugioh_Cartas.wwwroot.Controllers.CartasController",
+    "Method": "GetTodasCartas",
+    "RelativePath": "api/Cartas/All",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
