@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Yugioh_Cartas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cce7b964a1cf43fcc6df8be652c39740b3fa5bc0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e1a4ae3d17af359ab3cf15d0da194257ce5bfd5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Yugioh_Cartas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Yugioh_Cartas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

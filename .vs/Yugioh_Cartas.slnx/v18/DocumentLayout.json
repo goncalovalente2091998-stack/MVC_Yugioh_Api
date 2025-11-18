@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gonca\\Desktop\\projeto\\curriculo\\MVC_Yugioh_Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|c:\\users\\gonca\\desktop\\projeto\\curriculo\\mvc_yugioh_api\\yugioh_cartas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|solutionrelative:yugioh_cartas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|c:\\users\\gonca\\desktop\\projeto\\curriculo\\mvc_yugioh_api\\yugioh_cartas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|solutionrelative:yugioh_cartas\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|c:\\users\\gonca\\desktop\\projeto\\curriculo\\mvc_yugioh_api\\yugioh_cartas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|solutionrelative:yugioh_cartas\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B0FC824-AD05-E85F-D328-94D99D31AD50}|Yugioh_Cartas\\Yugioh_Cartas.csproj|c:\\users\\gonca\\desktop\\projeto\\curriculo\\mvc_yugioh_api\\yugioh_cartas\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\gonca\\Desktop\\projeto\\curriculo\\MVC_Yugioh_Api\\Yugioh_Cartas\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Yugioh_Cartas\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\gonca\\Desktop\\projeto\\curriculo\\MVC_Yugioh_Api\\Yugioh_Cartas\\wwwroot\\css\\site.css",
               "RelativeToolTip": "Yugioh_Cartas\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwIcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-11-18T13:47:59.93Z",
               "EditorCaption": ""
@@ -51,13 +51,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gonca\\Desktop\\projeto\\curriculo\\MVC_Yugioh_Api\\Yugioh_Cartas\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Yugioh_Cartas\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\gonca\\Desktop\\projeto\\curriculo\\MVC_Yugioh_Api\\Yugioh_Cartas\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Yugioh_Cartas\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBAAAABrAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-18T13:47:16.101Z",
               "EditorCaption": ""
