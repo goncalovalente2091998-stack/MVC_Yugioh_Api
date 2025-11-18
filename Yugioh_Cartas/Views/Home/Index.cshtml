@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
+
     <div class="container mt-4">
         <h1 class="text-center mb-4">Coleção de Cartas Yu-Gi-Oh!</h1>
 
-        <!-- FILTROS -->
         <div class="row mb-4">
             <div class="col-md-4">
                 <input type="text" id="filtro-nome" class="form-control" placeholder="🔍 Nome da carta">
             </div>
+
             <div class="col-md-4">
                 <select id="filtro-tipo" class="form-control">
                     <option value="">Todos os tipos</option>
                 </select>
             </div>
+
             <div class="col-md-4">
                 <select id="filtro-arquetipo" class="form-control">
                     <option value="">Todos os arquétipos</option>
@@ -30,10 +32,12 @@
         </div>
 
         <div class="row" id="cartas-container"></div>
+
+        <div class="text-center mt-4">
+            <div id="paginacao"></div>
+        </div>
     </div>
 
-
-    <!-- ZOOM -->
     <div id="zoom-overlay">
         <div id="zoom-card" class="text-center">
             <img src="" id="zoom-img" alt="">
@@ -41,9 +45,10 @@
         </div>
     </div>
 
-
     <script>
         let todasCartas = [];
+        let paginaAtual = 1;
+        const CARTAS_POR_PAGINA = 36;
 
         async function carregarCartas() {
             const res = await fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php");
@@ -51,7 +56,8 @@
             todasCartas = data.data;
 
             preencherFiltros();
-            exibirCartas(todasCartas);
+            renderizarPaginacao();
+            exibirPagina();
         }
 
         function preencherFiltros() {
@@ -65,12 +71,30 @@
             arqs.forEach(a => arquSelect.innerHTML += `<option value="${a}">${a}</option>`);
         }
 
-        function exibirCartas(lista) {
+        function obterCartasFiltradas() {
+            const nome = document.getElementById("filtro-nome").value.toLowerCase();
+            const tipo = document.getElementById("filtro-tipo").value;
+            const arque = document.getElementById("filtro-arquetipo").value;
+
+            return todasCartas.filter(c =>
+                c.name.toLowerCase().includes(nome) &&
+                (tipo === "" || c.type === tipo) &&
+                (arque === "" || c.archetype === arque)
+            );
+        }
+
+        function exibirPagina() {
+            const filtradas = obterCartasFiltradas();
+            const inicio = (paginaAtual - 1) * CARTAS_POR_PAGINA;
+            const fim = inicio + CARTAS_POR_PAGINA;
+            const pagina = filtradas.slice(inicio, fim);
+
             const container = document.getElementById("cartas-container");
-            container.innerHTML = lista.map(c => `
+
+            container.innerHTML = pagina.map(c => `
                 <div class="col-md-3 mb-4 d-flex justify-content-center">
                     <div class="ygocard" onclick="ampliarCarta('${c.card_images[0].image_url}', '${c.name}')">
-                        <img src="${c.card_images[0].image_url}" alt="${c.name}">
+                        <img loading="lazy" src="${c.card_images[0].image_url}" alt="${c.name}">
                         <div class="card-body">
                             <h5 class="card-title">${c.name}</h5>
                         </div>
@@ -79,18 +103,64 @@
             `).join('');
         }
 
+              function renderizarPaginacao() {
+            const filtradas = obterCartasFiltradas();
+            const totalPaginas = Math.ceil(filtradas.length / CARTAS_POR_PAGINA);
+
+            let paginas = [];
+            const maxVisiveis = 2; 
+
+            paginas.push(1);
+
+            for (let i = paginaAtual - maxVisiveis; i < paginaAtual; i++) {
+                if (i > 1) paginas.push(i);
+            }
+
+            if (paginaAtual > 1 && paginaAtual < totalPaginas) {
+                paginas.push(paginaAtual);
+            }
+
+            for (let i = paginaAtual + 1; i <= paginaAtual + maxVisiveis; i++) {
+                if (i < totalPaginas) paginas.push(i);
+            }
+
+            if (totalPaginas > 1) paginas.push(totalPaginas);
+
+            paginas = [...new Set(paginas)];
+
+            paginas.sort((a, b) => a - b);
+
+            let html = "";
+            let paginaAnterior = 0;
+
+            paginas.forEach(p => {
+                if (p - paginaAnterior > 1) {
+                    html += `<span class="text-warning mx-2">…</span>`;
+                }
+
+                html += `
+                    <button class="btn btn-warning m-1 ${p === paginaAtual ? "active" : ""}"
+                        onclick="mudarPagina(${p})">${p}</button>
+                `;
+
+                paginaAnterior = p;
+            });
+
+            document.getElementById("paginacao").innerHTML = html;
+        }
+
+
+        function mudarPagina(n) {
+            paginaAtual = n;
+            exibirPagina();
+            renderizarPaginacao();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
         function aplicarFiltros() {
-            const nome = document.getElementById("filtro-nome").value.toLowerCase();
-            const tipo = document.getElementById("filtro-tipo").value;
-            const arque = document.getElementById("filtro-arquetipo").value;
-
-            const filtradas = todasCartas.filter(c =>
-                c.name.toLowerCase().includes(nome) &&
-                (tipo === "" || c.type === tipo) &&
-                (arque === "" || c.archetype === arque)
-            );
-
-            exibirCartas(filtradas);
+            paginaAtual = 1;
+            renderizarPaginacao();
+            exibirPagina();
         }
 
         function ampliarCarta(img, nome) {
@@ -103,7 +173,7 @@
             if(e.target.id === "zoom-overlay"){
                 document.getElementById("zoom-overlay").style.display = "none";
             }
-        }
+        };
 
         document.getElementById("filtro-nome").addEventListener("input", aplicarFiltros);
         document.getElementById("filtro-tipo").addEventListener("change", aplicarFiltros);
